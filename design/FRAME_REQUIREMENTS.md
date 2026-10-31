@@ -13,6 +13,7 @@ Updated October 30, 2026. This document supersedes the earlier aircraft-size rec
 - Optional Picos may manage sensors and other I/O; their number, interfaces and responsibilities remain subject to change. Stabilization remains on the Pi in this plan.
 - Current tentative size: **7-inch propellers**, rather than the original 7-inch motor diagonal; start a 330–360 mm diagonal CAD comparison.
 - Desired flight time: **20 minutes with AI and FPV running**; the team selected **frequent fast maneuvers or freestyle**. This is a stretch requirement awaiting measured energy and propulsion feasibility.
+- Design for future projects using a **2.2 kg fully loaded case**, with a provisional **2.2–2.5 kgf peak thrust per motor** target. See [movement and upgrade requirements](MOVEMENT_AND_UPGRADE_SPEC.md); no payload or structural rating is established yet.
 
 The current [endurance and mounting study](ENDURANCE_AND_MOUNTING_PLAN.md) governs battery, mass, mounting and upgrade-envelope decisions. It retires the earlier 250 mm / 5-inch / 700 g study. Provisionally use a common 6S electrical architecture, a 3300–4000 mAh high-power LiPo for initial dynamic flight and room for an 8000–10000 mAh high-power Li-ion endurance pack. Neither pack choice establishes twenty-minute freestyle performance.
 
@@ -34,11 +35,11 @@ These candidate dimensions establish ideal spacing only. Verify actual board, ba
 
 ## Provisional weight and power constraints
 
-Weight and power remain explicit design gates. The current [allocation](ENDURANCE_AND_MOUNTING_PLAN.md#revised-mass-allocation) is **875 g dry including development reserve**, approximately **1.7 kg gross** with the example large Li-ion packs. Screen an approximately **1 kg maximum battery / 1.9 kg gross envelope**, subject to structural and propulsion validation. The revised allowance includes sensor/output hardware and optional Picos instead of a conventional FC. These are allocations, not measured masses or established payload ratings. The former 700 g complete-aircraft ceiling is retired.
+Weight and power remain explicit design gates. The current [allocation](ENDURANCE_AND_MOUNTING_PLAN.md#revised-mass-allocation) remains **875 g dry including development reserve**, approximately **1.7 kg gross** with the example large Li-ion packs. The [upgrade requirement](MOVEMENT_AND_UPGRADE_SPEC.md) raises the future fully loaded design case to **2.2 kg**, replacing the former 1.9 kg screening envelope. Keep the provisional **1 kg maximum battery class**. These are targets to validate, not measured masses or established payload ratings. The former 700 g complete-aircraft ceiling is retired.
 
 For electrical planning, use about **40 W average battery-side electronics allocation**, including Pi/ArduCopter/AI camera/cooling, FPV, receiver, sensor/I/O hardware, optional Picos and conversion losses. The study's illustrative allowances span 24–49 W. Measure the simultaneous flight-control/AI workload and its timing. Provision a correctly implemented **5 V/5 A-capable Pi rail** and suitable quiet I/O/sensor regulation; supply capacity and average consumption are different. No power saving from removing an FC is assumed.
 
-Propulsion power is not validated. At 1.7 kg gross, level hover requires about **425 gf per motor**; an illustrative 3:1 maximum-thrust screening target requires **1275 gf per motor**. Freestyle needs adequate response as well as thrust, including at low battery state of charge. Size ESCs, wiring and battery discharge capability from matched propulsion data and actual peak current. An endurance calculation alone cannot select these parts.
+Propulsion power is not validated. At 1.73 kg gross, level hover requires about **433 gf per motor**, increasing to **550 gf at 2.2 kg**. Target **2.2–2.5 kgf available peak thrust per motor**, or **8.8–10 kgf total**, to obtain approximately **4–4.5:1 at the future mass**. This replaces the earlier 3:1 screening target. Validate matched propulsion and installed power delivery under declared voltage, state-of-charge, duration and thermal conditions. Investigate **65–80 A-per-channel ESCs**, but select ratings and the shared input path from actual demand and cooling. Static thrust alone does not establish agility, endurance or structural capacity.
 
 ## Original compact geometry — reference case
 
@@ -155,6 +156,6 @@ First establish the [propeller-free native Pi flight-control bench milestone](PI
 2. Pi, battery and electronics keep-out envelopes in top/side views.
 3. Mass budget with measured/catalog masses and an allowance for wiring/mounts.
 4. Electrical block diagram and initial rail/load budget.
-5. Comparison of matched propulsion candidates at the gross mass of each complete layout, including the effect of frame, motor and battery changes.
+5. Comparison of matched propulsion candidates at the initial gross mass and the **2.2 kg future design case**, including frame, motor, battery and power-path changes. Check maneuver/peak motor loads and retention against that case before treating the frame as upgrade-ready.
 
 This is a requirements and feasibility document, not production CAD, a completed circuit schematic, or a validated bill of materials. Its geometry calculations have been checked; hardware fit, structural performance and electrical operation have not yet been tested.

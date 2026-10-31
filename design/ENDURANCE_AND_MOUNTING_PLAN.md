@@ -4,6 +4,8 @@ Updated October 30, 2026. This is the current sizing study. It supersedes the pr
 
 **Computing update:** The team now plans to run native ArduCopter and AI on the **same Pi 5**, probably without a separate flight-control computer. Optional Picos may manage sensors and I/O; their roles remain open. The [Pi flight-computer architecture](PI5_FLIGHT_COMPUTER_ARCHITECTURE.md) governs this change, including hardware support, scheduling, sensor interfaces and failure behavior. A bare Pi does not replace the sensor/output functions of an FC board.
 
+**Upgrade update:** The [movement and upgrade requirements](MOVEMENT_AND_UPGRADE_SPEC.md) now set a **2.2 kg future fully loaded design case** and **2.2–2.5 kgf available peak thrust per motor** target. This replaces the former 1.9 kg / 3:1 screening assumptions. Initial mass allocations and battery-energy arithmetic remain provisional; this change does not establish a payload rating or twenty-minute endurance.
+
 ## Requirements and the main tradeoff
 
 - Native ArduCopter and AI run as separate processes on Pi 5; optional Picos handle defined peripheral/sensor/output tasks. No separate flight-control computer is assumed.
@@ -100,7 +102,7 @@ The former 700 g complete-aircraft ceiling is retired. A listed 8000 mAh battery
 
 This is a target to reconcile with real components, not a completed BOM. The Pi-based sensor/I/O/Pico allowance replaces the earlier 35 g FC group; it does not claim a measured 25 g increase. A heavier frame, larger motor, enclosure or peripheral can exceed it. With the listed examples, design-budget gross masses would be approximately **1.450 kg with the 4000 mAh LiPo**, **1.715 kg with the 8000 mAh Li-ion**, or **1.730 kg with the 10000 mAh Li-ion**. The reserve is budget headroom, not a physical installed part.
 
-Use approximately **1 kg maximum battery mass / 1.9 kg gross mass as the initial structural and propulsion screening envelope**, subject to engineering validation. This is not an established payload rating. At 1.73 kg gross mass, each motor supplies about 433 gf in level hover. An illustrative 3:1 total-thrust screening target requires about 1300 gf per motor, rising to 1425 gf at 1.9 kg; freestyle may need more margin and good response. Verify the chosen motor/prop/battery combination rather than treating this ratio as proof of agility. Check maneuver loads, arm stiffness, fasteners and battery restraint at the maximum pack, not just static weight.
+Retain the provisional **1 kg maximum battery class**, and design/check the structure and propulsion against the new **2.2 kg future fully loaded case**. At 1.73 kg, each motor supplies approximately **433 gf in hover**; at 2.2 kg, it supplies **550 gf**. Target **2.2–2.5 kgf peak per motor** for approximately **4–4.5:1 at the future mass**, subject to installed electrical and thermal validation. The approximately **470 g difference** from the 1.73 kg case is growth budget for all additions, not demonstrated payload capacity. Account for stronger propulsion, wiring and mounts within that budget, without counting the existing dry reserve twice. Check maneuver loads, arm stiffness, fasteners and battery restraint at the future case; extra peak thrust does not establish twenty-minute endurance.
 
 ## Frame and mounting layout
 

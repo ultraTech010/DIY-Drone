@@ -10,6 +10,8 @@ The team probably will not use a separate board running flight stabilization. **
 
 The current airframe study remains a custom 7-inch-propeller quad, tentatively 330–360 mm motor diagonal, 6S power, FPV and a desired twenty minutes of frequent fast maneuvers. The latter remains a stretch requirement. See the [battery and mounting study](ENDURANCE_AND_MOUNTING_PLAN.md).
 
+The [movement and upgrade requirements](MOVEMENT_AND_UPGRADE_SPEC.md) now define a **2.2 kg future loaded case** and approximately **4:1 or better peak thrust-to-weight at that mass**, replacing earlier 1.9 kg / 3:1 screening. The Pi/Pico timing and output path must be validated for the selected propulsion; additional thrust does not compensate for stale sensor data or missed output updates.
+
 ## What is supported, and what is not established
 
 - ArduPilot officially supports [Linux-based autopilots](https://ardupilot.org/copter/docs/common-autopilots.html#linux-based-autopilots). Linux flight control is possible; a normal desktop configuration under arbitrary AI load is not thereby validated.
@@ -115,7 +117,7 @@ Keep an initial **about 40 W average battery-side electronics allocation** for t
 
 As an illustration, even a genuine 2 W electronics saving would save only 0.67 Wh over twenty minutes, equivalent to about **38 mAh of nominal 6S capacity** at the earlier 80% usable-energy assumption. No 2 W saving is claimed here. Propulsion, mass and maneuver profile remain the primary endurance-sizing questions.
 
-At the revised dry allocation, the listed 4000/8000/10000 mAh examples give gross budgets of approximately **1.450 / 1.715 / 1.730 kg** respectively. Use approximately **1 kg maximum pack / 1.9 kg gross as a screening envelope**, subject to structural and propulsion validation. Battery dimensions and tray allowance remain unchanged, but the central Pi/sensor module needs a new packaging study.
+At the revised dry allocation, the listed 4000/8000/10000 mAh examples give gross budgets of approximately **1.450 / 1.715 / 1.730 kg** respectively. Retain the provisional **1 kg maximum battery class**, but use the new **2.2 kg future fully loaded design case** for structural and propulsion assessment instead of the previous 1.9 kg screening envelope. Initial dry allocations are unchanged until parts are selected; any larger ESC, motor, connector or interface consumes reserve/growth budget. Battery dimensions and tray allowance remain unchanged, while the central Pi/sensor module still requires a packaging study. No payload rating is established.
 
 ## Mounting changes
 

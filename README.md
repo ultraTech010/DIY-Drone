@@ -25,6 +25,7 @@ DIY-Drone/
 | Flight and AI computer | Raspberry Pi 5 with cooling, storage, and dedicated power regulation |
 | Sensors and I/O | Supported flight sensors and motor-output hardware; optional Pico modules with explicitly defined interfaces |
 | Propulsion | Four motors and compatible ESCs; final selection depends on measured thrust, current, and installed mass |
+| Movement and upgrade targets | Future 2.2 kg loaded design case; 2.2–2.5 kgf peak thrust per motor, targeting approximately 4:1 or better at that mass; unvalidated |
 | Power | Provisional 6S architecture with a correctly implemented 5 V / 5 A-capable Pi supply |
 | Batteries | 3300–4000 mAh high-power LiPo for dynamic-flight development; space for 8000–10000 mAh high-power Li-ion endurance testing |
 | Radio and video | Remote-control receiver connected through a supported autopilot input path; separate FPV camera and video link |
@@ -53,10 +54,11 @@ There is no runnable project software or installation procedure yet. Implementat
 | [Frame requirements](design/FRAME_REQUIREMENTS.md) | Current airframe direction, packaging, and provisional constraints |
 | [Pi 5 flight-computer architecture](design/PI5_FLIGHT_COMPUTER_ARCHITECTURE.md) | Computing responsibilities, sensor/output interfaces, scheduling, and failure behavior |
 | [Endurance and mounting plan](design/ENDURANCE_AND_MOUNTING_PLAN.md) | Current battery, mass, power, and mounting study |
+| [Movement and upgrade requirements](design/MOVEMENT_AND_UPGRADE_SPEC.md) | Thrust, movement targets, future loaded mass, electrical headroom and acceptance gates |
 | [Project plan](design/PROJECT_PLAN.md) | Broader project scope, implementation gates, and historical hardware research |
 | [Power and flight feasibility](design/POWER_AND_FLIGHT_FEASIBILITY.md) | Earlier compact-aircraft calculations retained for historical comparison |
 
-Start with the frame requirements, computing architecture, and endurance study. They supersede earlier sizes, budgets, and separate-flight-controller assumptions retained in the historical research.
+Start with the frame requirements, computing architecture, endurance study, and movement/upgrade requirements. They supersede earlier sizes, budgets, separate-flight-controller assumptions, 3:1 thrust screening and the former 1.9 kg gross screening envelope retained in historical research. The new 2.2 kg case is a requirement to validate, not an established payload rating.
 
 ## Next milestones
 
